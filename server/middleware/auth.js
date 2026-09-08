@@ -1,0 +1,25 @@
+const auth = async (req, res, next) => {
+  try {
+    const authHeader = req.header.authorization;
+
+    if (!authHeader || !authHeader.startsWidth("Bearer ")) {
+      return res
+        .status(401)
+        .json({ success: false, message: "Not authorized, no token" });
+    }
+
+    const token = authHeader.split(" ")[1];
+
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    req.userId = decoded.id;
+    next();
+  } catch (error) {
+    console.error("Auth middleware error:", error.message);
+    return res
+      .status(401)
+      .json({ success: false, message: "Not authorized, token failed" });
+  }
+};
+
+export default auth;

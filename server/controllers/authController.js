@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import User from "../models/Ulser.js";
+import User from "../models/User.js";
 
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWR_SECRET, { expiresIn: "30d" });
