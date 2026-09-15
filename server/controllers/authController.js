@@ -1,15 +1,16 @@
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
 const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWR_SECRET, { expiresIn: "30d" });
+  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "30d" });
 };
 
 export const register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
-    if ((!name, !email, !password))
+    if (!name || !email || !password)
       return res
         .status(400)
         .json({ success: false, message: "All fields are required" });
@@ -40,7 +41,7 @@ export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    if ((!email, !password))
+    if (!email || !password)
       return res
         .status(400)
         .json({ success: false, message: "All fields are required" });
@@ -57,6 +58,8 @@ export const login = async (req, res) => {
         .status(400)
         .json({ success: false, message: "Invalid Credentials" });
     }
+
+    const token = generateToken(user._id);
 
     res.status(201).json({ success: true, token, user });
   } catch (error) {
