@@ -745,17 +745,17 @@ export const dummyRankings = [
         competitors: [
             {
                 position: 1,
-                url: "https://www.youtube.com/@GreatStackDev",
+                url: "https://www.youtube.com/",
                 domain: "youtube.com",
-                title: "GreatStack",
+                title: "Keti",
                 snippet: "Build placement ready or Job ready project using React JS, MongoDB, Express and Node JS. Step by step MERN Stack project for final year students.Read more",
             },
             {
                 position: 3,
-                url: "https://github.com/greatstackdev",
+                url: "https://github.com/ketidev",
                 domain: "github.com",
-                title: "GreatStack",
-                snippet: "https://github.com > greatstackdev",
+                title: "Keti",
+                snippet: "https://github.com > Keti",
             },
             {
                 position: 5,
@@ -1009,17 +1009,17 @@ export const dummyWebsiteRanking = {
     competitors: [
         {
             position: 1,
-            url: "https://www.youtube.com/@GreatStackDev",
+            url: "https://www.youtube.com/",
             domain: "youtube.com",
-            title: "GreatStack",
+            title: "Keti",
             snippet: "Build placement ready or Job ready project using React JS, MongoDB, Express and Node JS. Step by step MERN Stack project for final year students.Read more",
         },
         {
             position: 3,
-            url: "https://github.com/greatstackdev",
+            url: "https://github.com/ketidev",
             domain: "github.com",
             title: "GreatStack",
-            snippet: "https://github.com > greatstackdev",
+            snippet: "https://github.com > Keti",
         },
         {
             position: 5,
