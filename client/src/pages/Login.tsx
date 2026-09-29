@@ -23,7 +23,7 @@ export default function Login({ state }: { state: string }) {
         } else {
             result = await register(name, email, password)
         }
-
+ 
         if(result.success) {
             const redirect = searchParams.get("redirect") || "/dashboard";
             navigate(redirect)
