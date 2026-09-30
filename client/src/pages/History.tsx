@@ -1,22 +1,9 @@
-import { useState, useEffect } from "react";
+import { AlertCircle, ArrowUpDown, Clock, ExternalLink, Filter, Loader2, Search, Trash2 } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Clock, Trash2, ExternalLink, Search, AlertCircle, Loader2, Filter, ArrowUpDown } from "lucide-react";
-import ScoreGauge from "../components/ScoreGauge";
 import { dummyAnalysisData } from "../assets/assets";
-
-interface AnalysisItem {
-    _id: string;
-    url: string;
-    overallScore: number;
-    status: string;
-    createdAt: string;
-    categories: {
-        seo: number;
-        performance: number;
-        accessibility: number;
-        bestPractices: number;
-    };
-}
+import ScoreGauge from "../components/ScoreGauge";
+import type { AnalysisItem } from "../models/analysisItem";
 
 export default function History() {
     const [analyses, setAnalyses] = useState<AnalysisItem[]>([]);

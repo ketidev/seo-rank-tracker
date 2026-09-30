@@ -1,22 +1,9 @@
-import { useState, useEffect } from "react";
+import { ArrowRightIcon, BarChart3Icon, GlobeIcon, SearchIcon, TrendingUpIcon } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { SearchIcon, ArrowRightIcon, BarChart3Icon, GlobeIcon, TrendingUpIcon } from "lucide-react";
-import AnalysesCard from "../components/AnalysesCard";
 import { dummyAnalysisData } from "../assets/assets";
-
-interface AnalysisSummary {
-    _id: string;
-    url: string;
-    overallScore: number;
-    status: string;
-    createdAt: string;
-    categories: {
-        seo: number;
-        performance: number;
-        accessibility: number;
-        bestPractices: number;
-    };
-}
+import AnalysesCard from "../components/AnalysesCard";
+import type { AnalysisSummary } from "../models/analysisSummary";
 
 export default function Dashboard() {
     const user = { name: "John Doe", plan: "free", analysisCount: 2 };

@@ -1,12 +1,7 @@
+import { AlertCircle, AlertTriangle, ChevronDown, ChevronUp, Info } from "lucide-react";
 import { useState } from "react";
-import { ChevronDown, ChevronUp, AlertTriangle, AlertCircle, Info } from "lucide-react";
+import type { Issue } from "../models/issue";
 
-interface Issue {
-    severity: string;
-    category: string;
-    message: string;
-    recommendation: string;
-}
 
 export default function IssueCard({ issue }: { issue: Issue }) {
     const [expanded, setExpanded] = useState(false);

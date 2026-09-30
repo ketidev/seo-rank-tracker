@@ -1,7 +1,8 @@
 /* eslint-disable react-refresh/only-export-components */
 import { BarChart3Icon, EyeIcon, FileSearchIcon, GlobeIcon, ShieldIcon, TargetIcon, TrendingUpIcon, ZapIcon } from "lucide-react";
+import type { HomeFeature, HomeFooterLinkGroup, HomeHowItWorksStep, Ranking, WebsiteAnalysis, WebsiteAnalysisSummary, WebsiteRanking } from "../models/assets";
 
-export const homeFeaturesData = [
+export const homeFeaturesData: HomeFeature[] = [
     {
         icon: <BarChart3Icon size={28} />,
         title: "SEO Score",
@@ -34,7 +35,7 @@ export const homeFeaturesData = [
     },
 ];
 
-export const homeHowItWorksData = [
+export const homeHowItWorksData: HomeHowItWorksStep[] = [
     {
         num: "01",
         icon: <GlobeIcon size={24} />,
@@ -55,7 +56,7 @@ export const homeHowItWorksData = [
     },
 ];
 
-export const homefooterLinks = [
+export const homefooterLinks:HomeFooterLinkGroup[] = [
     {
         title: "Product",
         links: ["Features", "Pricing", "API", "Browser Extension"],
@@ -88,7 +89,7 @@ export const HomeWave = () => (
     </svg>
 );
 
-export const dummyAnalysisData = [
+export const dummyAnalysisData: WebsiteAnalysisSummary[] = [
     {
         categories: { seo: 65, performance: 50, accessibility: 85, bestPractices: 70 },
         metaData: {
@@ -287,7 +288,7 @@ export const dummyAnalysisData = [
     },
 ];
 
-export const dummyWebsiteAnalysis = {
+export const dummyWebsiteAnalysis:WebsiteAnalysis = {
     categories: { seo: 91, performance: 100, accessibility: 90, bestPractices: 90 },
     metaData: {
         title: "Full Stack Web Development Projects with source code - GreatStack",
@@ -372,7 +373,7 @@ export const dummyWebsiteAnalysis = {
     updatedAt: "2026-05-06T05:53:15.015Z",
 };
 
-export const dummyRankings = [
+export const dummyRankings:Ranking[] = [
     {
         _id: "69faedb159140a797168cd5c",
         userId: "69dcf7cacc98f8daf29ecca3",
@@ -942,7 +943,7 @@ export const dummyRankings = [
     },
 ];
 
-export const dummyWebsiteRanking = {
+export const dummyWebsiteRanking:WebsiteRanking = {
     _id: "69dd0cbd0fa79fd71e3b0473",
     userId: "69dcf7cacc98f8daf29ecca3",
     keyword: "greatstack",

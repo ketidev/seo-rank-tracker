@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AlertTriangleIcon, ClockIcon } from "lucide-react";
-import ScoreGauge from "./ScoreGauge";
 import { Link } from "react-router-dom";
+import ScoreGauge from "./ScoreGauge";
 
 export default function AnalysesCard({ analysis }: { analysis: any }) {
     const getScoreClass = (s: number) => {

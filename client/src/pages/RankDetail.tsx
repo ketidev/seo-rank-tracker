@@ -1,41 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState, useEffect, useRef } from "react";
-import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Target, Globe, Clock, TrendingUp, TrendingDown, Minus, RefreshCw, AlertCircle, ExternalLink, Trophy, Users, Calendar, Loader2 } from "lucide-react";
+import { AlertCircle, ArrowLeft, Calendar, Clock, ExternalLink, Globe, Loader2, Minus, RefreshCw, Target, TrendingDown, TrendingUp, Trophy, Users } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { dummyWebsiteRanking } from "../assets/assets";
-
-interface RankHistoryEntry {
-    date: string;
-    position: number | null;
-    page: number | null;
-    title: string;
-    snippet: string;
-}
-
-interface Competitor {
-    position: number;
-    url: string;
-    domain: string;
-    title: string;
-    snippet: string;
-}
-
-interface TrackingData {
-    _id: string;
-    keyword: string;
-    url: string;
-    domain: string;
-    currentPosition: number | null;
-    currentPage: number | null;
-    bestPosition: number | null;
-    positionChange: number;
-    rankHistory: RankHistoryEntry[];
-    competitors: Competitor[];
-    active: boolean;
-    lastChecked: string | null;
-    status: string;
-    createdAt: string;
-}
+import type { TrackingData } from "../models/trackingData";
 
 export default function RankDetail() {
     const { id } = useParams();

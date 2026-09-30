@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { SiFacebook, SiInstagram, SiTwitch, SiX } from "@icons-pack/react-simple-icons";
 import { ChartNoAxesColumnIcon } from "lucide-react";
 import { homefooterLinks } from "../../assets/assets";
-import { SiX, SiInstagram, SiFacebook, SiTwitch } from "@icons-pack/react-simple-icons";
+import type { HomeFooterLinkGroup } from "../../models/assets";
 
 export default function Footer() {
     return (
@@ -30,11 +31,11 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {homefooterLinks.map((section: any) => (
+                    {homefooterLinks.map((section: HomeFooterLinkGroup) => (
                         <div key={section.title}>
                             <h3 className="mb-4">{section.title}</h3>
                             <ul className="space-y-1">
-                                {section.links.map((link: any) => (
+                                {section.links.map((link: string) => (
                                     <li key={link}>
                                         <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                                             {link}

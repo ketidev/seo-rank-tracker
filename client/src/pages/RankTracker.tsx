@@ -1,23 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState, useEffect } from "react";
+import { AlertCircle, ArrowUpDown, Clock, ExternalLink, Eye, EyeOff, Filter, Globe, Loader2, Minus, Plus, RefreshCw, Search, Target, Trash2, TrendingDown, TrendingUp, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Target, Plus, RefreshCw, Trash2, TrendingUp, TrendingDown, Minus, ExternalLink, Clock, Loader2, X, Search, Globe, AlertCircle, Eye, EyeOff, Filter, ArrowUpDown } from "lucide-react";
 import { dummyRankings } from "../assets/assets";
-
-interface KeywordItem {
-    _id: string;
-    keyword: string;
-    url: string;
-    domain: string;
-    currentPosition: number | null;
-    currentPage: number | null;
-    bestPosition: number | null;
-    positionChange: number;
-    active: boolean;
-    lastChecked: string | null;
-    status: string;
-    competitors: { position: number; url: string; domain: string; title: string; snippet: string }[];
-}
+import type { KeywordItem } from "../models/keywordItem";
 
 export default function RankTracker() {
     const [keywords, setKeywords] = useState<KeywordItem[]>([]);

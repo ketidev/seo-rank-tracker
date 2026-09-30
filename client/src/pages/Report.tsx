@@ -1,59 +1,10 @@
-import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import ScoreGauge from "../components/ScoreGauge";
-import IssueCard from "../components/IssueCard";
-import { ArrowLeft, Globe, Clock, FileText, Image, Link2, Heading, Tag, AlertCircle, ExternalLink, Type, Search } from "lucide-react";
+import { AlertCircle, ArrowLeft, Clock, ExternalLink, FileText, Globe, Heading, Image, Link2, Search, Tag, Type } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { dummyWebsiteAnalysis } from "../assets/assets";
-
-interface AnalysisData {
-    _id: string;
-    url: string;
-    overallScore: number;
-    status: string;
-    createdAt: string;
-    loadTime: number;
-    pageSize: number;
-    wordCount: number;
-    categories: {
-        seo: number;
-        performance: number;
-        accessibility: number;
-        bestPractices: number;
-    };
-    metaData: {
-        title: string;
-        description: string;
-        canonical: string;
-        robots: string;
-        ogTitle: string;
-        ogDescription: string;
-        ogImage: string;
-        twitterCard: string;
-        viewport: string;
-        charset: string;
-    };
-    headings: {
-        h1: number;
-        h2: number;
-        h3: number;
-        h4: number;
-        h5: number;
-        h6: number;
-        h1Texts: string[];
-    };
-    links: {
-        internal: number;
-        external: number;
-        total: number;
-    };
-    images: {
-        total: number;
-        missingAlt: number;
-        withAlt: number;
-    };
-    keywords: { word: string; count: number; density: number }[];
-    issues: { severity: string; category: string; message: string; recommendation: string }[];
-}
+import IssueCard from "../components/IssueCard";
+import ScoreGauge from "../components/ScoreGauge";
+import type { AnalysisData } from "../models/analysisData";
 
 export default function Report() {
     const { id } = useParams();
